@@ -19,10 +19,9 @@ const { last6Month } = getLastMonth();
 const Dashboard = () => {
   const { user } = useSelector((state: RootState) => state.userReducer);
 
-  const { isLoading, data,  isError } = useStatsQuery(
-    user?._id as string
-  );
+  const { isLoading, data, isError } = useStatsQuery(user?._id as string);
 
+  // eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
   const stats = data?.stats!;
 
   if (isError) return <Navigate to={"/"} />;

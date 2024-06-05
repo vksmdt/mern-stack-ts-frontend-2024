@@ -74,7 +74,7 @@ export type OrderDetailsResponse = {
 
 export type StatsResponse = {
   success: boolean;
-  stats: Stats | undefined;
+  stats: Stats;
 };
 
 export type PieResponse = {
@@ -93,9 +93,10 @@ export type LineResponse = {
 };
 
 export type NewProductRequest = {
-  id: string | undefined;
+  id?: string;
   formData: FormData;
 };
+
 export type UpdateProductRequest = {
   userId: string;
   productId: string;
@@ -125,5 +126,5 @@ export type UpdateOrderRequest = {
 
 export type DeleteUserRequest = {
   userId: string;
-  adminUserId: string | undefined;
+  adminUserId: string;
 };

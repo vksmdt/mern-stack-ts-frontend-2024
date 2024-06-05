@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { Skeleton } from "../../../components/Loader";
@@ -11,12 +12,12 @@ const PieCharts = () => {
 
   const { isLoading, data, isError } = usePieQuery(user?._id as string);
 
-  const adminCustomer = data?.charts.adminCustomer;
-  const order = data?.charts.orderFullfillment;
-  const categories = data?.charts.productCategories;
-  const revenue = data?.charts.revenueDistribution;
-  const stock = data?.charts.stockAvailablity;
-  const ageGroup = data?.charts.usersAgeGroup;
+  const adminCustomer = data?.charts.adminCustomer!;
+  const order = data?.charts.orderFullfillment!;
+  const categories = data?.charts.productCategories!;
+  const revenue = data?.charts.revenueDistribution!;
+  const stock = data?.charts.stockAvailablity!;
+  const ageGroup = data?.charts.usersAgeGroup!;
 
   if (isError) return <Navigate to={"/admin/dashboard"} />;
 

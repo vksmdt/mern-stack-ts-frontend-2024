@@ -5,7 +5,7 @@ export type User = {
   gender: string;
   role: string;
   dob: string;
-  _id: string;
+  _id: string ;
 };
 
 export type Product = {
@@ -110,7 +110,7 @@ export type Pie = {
     inStock: number;
     outOfStock: number;
   };
-  usersAgeGroup: UsersAgeGroup;
+  usersAgeGroup?: UsersAgeGroup;
   adminCustomer: {
     admin: number;
     customer: number;
