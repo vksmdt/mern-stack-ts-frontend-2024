@@ -97,7 +97,7 @@ const Customers = () => {
         }))
       );
     }
-  }, [data]);
+  }, [data, deleteHandler]);
 
   const Table = TableHOC<DataType>(
     columns,

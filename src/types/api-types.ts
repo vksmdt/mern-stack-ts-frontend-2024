@@ -93,7 +93,7 @@ export type LineResponse = {
 };
 
 export type NewProductRequest = {
-  id: string;
+  id: string | undefined;
   formData: FormData;
 };
 export type UpdateProductRequest = {
@@ -101,6 +101,12 @@ export type UpdateProductRequest = {
   productId: string;
   formData: FormData;
 };
+
+export type DeleteProductRequest = {
+  userId: string;
+  productId: string;
+};
+
 export type NewOrderRequest = {
   shippingInfo: ShippingInfo;
   orderItems: CartItems[];
@@ -119,5 +125,5 @@ export type UpdateOrderRequest = {
 
 export type DeleteUserRequest = {
   userId: string;
-  adminUserId: string;
+  adminUserId: string | undefined;
 };

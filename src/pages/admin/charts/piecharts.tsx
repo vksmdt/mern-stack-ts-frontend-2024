@@ -1,12 +1,10 @@
 import { useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
+import { Skeleton } from "../../../components/Loader";
 import AdminSidebar from "../../../components/admin/AdminSidebar";
 import { DoughnutChart, PieChart } from "../../../components/admin/Charts";
 import { usePieQuery } from "../../../redux/api/dashBoardApi";
 import { RootState } from "../../../redux/store";
-import toast from "react-hot-toast";
-import { CustomError } from "../../../types/api-types";
-import { Skeleton } from "../../../components/Loader";
-import { Navigate } from "react-router-dom";
 
 const PieCharts = () => {
   const { user } = useSelector((state: RootState) => state.userReducer);
