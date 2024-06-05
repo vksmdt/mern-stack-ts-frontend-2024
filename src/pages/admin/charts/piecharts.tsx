@@ -9,14 +9,14 @@ import { RootState } from "../../../redux/store";
 const PieCharts = () => {
   const { user } = useSelector((state: RootState) => state.userReducer);
 
-  const { isLoading, data, error, isError } = usePieQuery(user?._id as string);
+  const { isLoading, data, isError } = usePieQuery(user?._id as string);
 
-  const adminCustomer = data?.charts.adminCustomer!;
-  const order = data?.charts.orderFullfillment!;
-  const categories = data?.charts.productCategories!;
-  const revenue = data?.charts.revenueDistribution!;
-  const stock = data?.charts.stockAvailablity!;
-  const ageGroup = data?.charts.usersAgeGroup!;
+  const adminCustomer = data?.charts.adminCustomer;
+  const order = data?.charts.orderFullfillment;
+  const categories = data?.charts.productCategories;
+  const revenue = data?.charts.revenueDistribution;
+  const stock = data?.charts.stockAvailablity;
+  const ageGroup = data?.charts.usersAgeGroup;
 
   if (isError) return <Navigate to={"/admin/dashboard"} />;
 

@@ -19,7 +19,7 @@ const { last6Month } = getLastMonth();
 const Dashboard = () => {
   const { user } = useSelector((state: RootState) => state.userReducer);
 
-  const { isLoading, data, error, isError } = useStatsQuery(
+  const { isLoading, data,  isError } = useStatsQuery(
     user?._id as string
   );
 

@@ -74,7 +74,7 @@ export type OrderDetailsResponse = {
 
 export type StatsResponse = {
   success: boolean;
-  stats: Stats;
+  stats: Stats | undefined;
 };
 
 export type PieResponse = {
