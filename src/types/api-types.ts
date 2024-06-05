@@ -126,5 +126,5 @@ export type UpdateOrderRequest = {
 
 export type DeleteUserRequest = {
   userId: string;
-  adminUserId: string;
+  adminUserId?: string;
 };
