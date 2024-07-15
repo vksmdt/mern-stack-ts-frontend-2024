@@ -8,6 +8,7 @@ import {
   ProductResponse,
   SearchProductsRequest,
   SearchProductsResponse,
+  SingleProductDetails,
   UpdateProductRequest,
 } from "../../types/api-types";
 
@@ -20,6 +21,10 @@ export const productApi = createApi({
   endpoints: (builder) => ({
     latestProduct: builder.query<AllProductsResponse, string>({
       query: () => "latest",
+      providesTags: ["product"],
+    }),
+    singleProductDetails: builder.query<SingleProductDetails, string>({
+      query: (id) => `${id}`,
       providesTags: ["product"],
     }),
     alllProducts: builder.query<AllProductsResponse, string>({
@@ -79,9 +84,11 @@ export const {
   useLatestProductQuery,
   useAlllProductsQuery,
   useCategoriesQuery,
+  useSingleProductDetailsQuery,
   useSearchProductsQuery,
   useNewProductMutation,
   useProductDetailsQuery,
   useUpdateProductMutation,
   useDeleteProductMutation,
-} = productApi;
+  } = productApi;
+  

@@ -20,6 +20,7 @@ const OrderDetails = lazy(() => import("./pages/Orders"));
 const Login = lazy(() => import("./pages/Login"));
 const NotFound = lazy(() => import("./pages/Not-Found"));
 const CheckOut = lazy(() => import("./pages/CheckOut"));
+const ProductDetails = lazy(() => import("./pages/Product-Details"));
 
 //admin imports routes
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
@@ -58,7 +59,7 @@ const App = () => {
       }
     });
   }, [dispatch]);
-  
+
   return loading ? (
     <Loader />
   ) : (
@@ -70,6 +71,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="search" element={<Search />} />
           <Route path="cart" element={<Cart />} />
+          <Route path=":id" element={<ProductDetails />} />
           {/* not loggin rouet */}
           <Route
             path="login"
